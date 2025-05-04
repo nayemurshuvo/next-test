@@ -19,6 +19,10 @@ const Navbar = () => {
       title: "Contact",
       path: "/contact",
     },
+    {
+      title: "Blogs",
+      path: "/blogs",
+    },
   ];
 
   const gotoLogin = () => {
@@ -28,7 +32,9 @@ const Navbar = () => {
   return (
     <div>
       <nav className="bg-red-400 flex justify-between items-center px-4">
-        <h2 className="text-3xl font-bold">My App</h2>
+        <h2 className="text-3xl font-bold">
+          My <span className="text-emerald-300">App</span>
+        </h2>
         <ul className="flex space-x-4 text-2xl">
           {links.map((link) => (
             <Link
