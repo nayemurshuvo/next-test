@@ -16,27 +16,22 @@ const Student = ({ student }) => {
   } = student;
 
   return (
-    <div>
-      <div className="card w-96 bg-slate-700 card-xs shadow-sm text-white">
-        <div className="card-body">
-          <h2 className="card-title">{_id}</h2>
-          <p>{student_name}</p>
-          <p>{email}</p>
-          <p>{age}</p>
-          <p>{dept}</p>
-          <p>{contact_no}</p>
-          <p>{gender}</p>
-          <p>{section}</p>
-          <p>{address}</p>
-          <div className="justify-center card-actions space-x-4">
-            <DeleteButton />
-            <Link href={"/editStudent/123"}>
-              <FaRegEdit size={24} />
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
+    <tr>
+      <td>{student_name}</td>
+      <td>{email}</td>
+      <td className="text-center">{age}</td>
+      <td className="text-center">{dept}</td>
+      <td className="text-center">{section}</td>
+      <td className="text-center">{contact_no}</td>
+      <td className="text-center">{gender}</td>
+      <td className="text-center">{address}</td>
+      <td>
+        <FaRegEdit size={20} />
+      </td>
+      <td className="text-center">
+        <DeleteButton />
+      </td>
+    </tr>
   );
 };
 

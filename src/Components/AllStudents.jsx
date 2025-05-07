@@ -23,10 +23,28 @@ const AllStudents = () => {
   // console.log("Test" + students);
 
   return (
-    <div className="grid grid-cols-3 gap-6 mt-4">
-      {students.map((student) => (
-        <Student student={student} key={student._id}></Student>
-      ))}
+    <div className="overflow-x-auto">
+      <table className="table table-md table-zebra">
+        <thead>
+          <tr className="text-center text-xl">
+            <th>Student Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Department</th>
+            <th>Section</th>
+            <th>Contact No</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {students.map((student) => (
+            <Student key={student._id} student={student} />
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
