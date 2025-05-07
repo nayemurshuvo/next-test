@@ -9,7 +9,7 @@ const Navbar = () => {
   const links = [
     {
       title: "Home",
-      path: "/home",
+      path: "/",
     },
     {
       title: "About",
@@ -31,11 +31,11 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="bg-red-400 flex justify-between items-center px-4">
+      <nav className="bg-red-400 flex justify-between items-center px-4 p-4">
         <h2 className="text-3xl font-bold">
-          My <span className="text-emerald-300">App</span>
+          My<span className="text-emerald-300">App</span>
         </h2>
-        <ul className="flex space-x-4 text-2xl">
+        <ul className="flex space-x-8 text-2xl">
           {links.map((link) => (
             <Link
               className={`${pathName === link.path && "text-bold text-white"}`}
@@ -46,12 +46,17 @@ const Navbar = () => {
             </Link>
           ))}
         </ul>
-        <button
-          className="text-white px-2 bg-amber-800 border"
-          onClick={gotoLogin}
-        >
-          Login
-        </button>
+        <div className="space-x-4">
+          <button className="font-bold text-black rounded-xl px-2 py-2 bg-emerald-300 border">
+            <Link href={"/addStudent"}>Add Student</Link>
+          </button>
+          <button
+            className="font-bold text-black rounded-xl px-2 py-2 bg-emerald-300 border"
+            onClick={gotoLogin}
+          >
+            Login
+          </button>
+        </div>
       </nav>
     </div>
   );

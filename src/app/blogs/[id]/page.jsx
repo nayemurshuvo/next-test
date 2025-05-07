@@ -1,7 +1,7 @@
-import blogs from "../page";
+// import blogs from "../page";
 
 const singleBlog = ({ params }) => {
-  console.log(params.id);
+  // console.log("Hello", params.id);
   const { id, title, content } = blogsData.find((blog) => blog.id == params.id);
   return (
     <div>
