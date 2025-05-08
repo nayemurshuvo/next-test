@@ -7,7 +7,9 @@ const AllStudents = () => {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    fetch("/api/student")
+    fetch("/api/student", {
+      cache: "no-store",
+    })
       .then((res) => {
         return res.json();
       })
@@ -19,6 +21,16 @@ const AllStudents = () => {
         console.error("Fetch error:", error);
       });
   }, []);
+
+  // const handleDeleteFromList = (id) => {
+  //   setStudents((std) => std.filter((student) => student._id !== id));
+  // };
+
+  const handleDeleteFromList = (deletedId) => {
+    setStudents((previousStudents) =>
+      previousStudents.filter((student) => student._id !== deletedId)
+    );
+  };
 
   // console.log("Test" + students);
 
@@ -41,7 +53,11 @@ const AllStudents = () => {
         </thead>
         <tbody>
           {students.map((student) => (
-            <Student key={student._id} student={student} />
+            <Student
+              key={student._id}
+              student={student}
+              onDelete={handleDeleteFromList}
+            />
           ))}
         </tbody>
       </table>

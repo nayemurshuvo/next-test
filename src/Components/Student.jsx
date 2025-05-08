@@ -2,7 +2,7 @@ import Link from "next/link";
 import DeleteButton from "./DeleteButton";
 import { FaRegEdit } from "react-icons/fa";
 
-const Student = ({ student }) => {
+const Student = ({ student, onDelete }) => {
   const {
     _id,
     student_name,
@@ -29,7 +29,7 @@ const Student = ({ student }) => {
         <FaRegEdit size={20} className="ml-2" />
       </td>
       <td className="text-center">
-        <DeleteButton />
+        <DeleteButton id={_id} onDelete={onDelete} />
       </td>
     </tr>
   );
