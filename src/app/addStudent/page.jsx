@@ -307,7 +307,7 @@ const addStudent = () => {
         </div>
         <button
           type="submit"
-          className="w-full btn btn-warning font-bold text-2xl text-black hover:text-white mt-4"
+          className="w-full btn btn-warning bg-[#c2cc33] font-bold text-2xl text-black hover:text-white mt-4"
         >
           Save
         </button>

@@ -155,7 +155,7 @@ const blogs = () => {
                 {blog.excerpt}
               </p>
               <div className="card-actions justify-center mt-4">
-                <button className="btn btn-accent">
+                <button className="btn btn-warning text-black bg-[#c2cc33]">
                   <Link href={`blogs/${blog.id}`}>View Details</Link>
                 </button>
               </div>
