@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Student from "./Student";
-
+// http://localhost:3000/api/student
 const AllStudents = () => {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/student")
+    fetch("/api/student")
       .then((res) => {
         return res.json();
       })
