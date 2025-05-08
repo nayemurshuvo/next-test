@@ -30,9 +30,24 @@ export async function POST(request) {
 
 // Get all students
 export async function GET() {
-  await connectMongoDB();
-  const allStudents = await StudentData.find();
-  return NextResponse.json({ allStudents });
+  // await connectMongoDB();
+  // const allStudents = await StudentData.find();
+  // console.log("Fetched students:", allStudents);
+  // return NextResponse.json({ allStudents });
+  try {
+    await connectMongoDB();
+    const allStudents = await StudentData.find();
+
+    console.log("Fetched students:", allStudents);
+
+    return NextResponse.json({ allStudents });
+  } catch (error) {
+    console.error("API Error in GET /api/student:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch student data" },
+      { status: 500 }
+    );
+  }
 }
 
 // Delete id wise Student
