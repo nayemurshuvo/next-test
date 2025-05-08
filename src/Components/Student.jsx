@@ -16,7 +16,7 @@ const Student = ({ student }) => {
   } = student;
 
   return (
-    <tr>
+    <tr className="font-medium">
       <td>{student_name}</td>
       <td>{email}</td>
       <td className="text-center">{age}</td>
@@ -26,7 +26,7 @@ const Student = ({ student }) => {
       <td className="text-center">{gender}</td>
       <td className="text-center">{address}</td>
       <td>
-        <FaRegEdit size={20} />
+        <FaRegEdit size={20} className="ml-2" />
       </td>
       <td className="text-center">
         <DeleteButton />

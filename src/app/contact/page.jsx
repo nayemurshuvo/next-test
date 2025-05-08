@@ -1,39 +1,25 @@
-// "use client";
-
-// import { useEffect, useState } from "react";
-
 const contact = () => {
-  // const [name, setName] = useState();
-
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     const storedName = localStorage.getItem("name");
-  //     if (storedName) {
-  //       setName(storedName);
-  //     }
-  //   }
-  // }, []);
-
-  // const handleNameChange = (event) => {
-  //   const newName = event.target.value;
-  //   setName(newName);
-  //   if (typeof window !== "undefined") {
-  //     localStorage.setItem("name", newName);
-  //   }
-  // };
-
   return (
     <div>
-      <h1 className="text-4xl">This is Contact Page</h1>
-      {/* <div>
-        <h1>Welcome, {name || "User Name"}</h1>
-        <input
-          type="text"
-          value={name}
-          onChange={handleNameChange}
-          placeholder="Enter your name"
-        />
-      </div> */}
+      <div className="chat chat-start">
+        <div className="chat-bubble chat-bubble-primary">
+          Hi, can you please share your address?
+        </div>
+      </div>
+      <div className="chat chat-start">
+        <div className="chat-bubble chat-bubble-secondary">
+          And the contact number?
+        </div>
+      </div>
+
+      <div className="chat chat-end">
+        <div className="chat-bubble chat-bubble-info">
+          yes, Mirpur 10, Dhaka 1212
+        </div>
+      </div>
+      <div className="chat chat-end">
+        <div className="chat-bubble chat-bubble-success">019999999999</div>
+      </div>
     </div>
   );
 };

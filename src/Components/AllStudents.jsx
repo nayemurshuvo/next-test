@@ -26,7 +26,7 @@ const AllStudents = () => {
     <div className="overflow-x-auto">
       <table className="table table-md table-zebra">
         <thead>
-          <tr className="text-center text-xl">
+          <tr className="text-center text-xl font-bold text-black">
             <th>Student Name</th>
             <th>Email</th>
             <th>Age</th>

@@ -25,11 +25,11 @@ export default function RootLayout({ children }) {
       >
         <div className="max-w-7xl mx-auto p-4">
           <Navbar></Navbar>
-          <div className="h-screen text-center font-bold text-3xl py-6">
+          <div className="min-h-screen text-center font-bold text-3xl py-6">
             {children}
           </div>
           <footer>
-            <h6>This is Footer</h6>
+            <h6 className="text-center">&copy; Nayemur 2025</h6>
           </footer>
         </div>
       </body>

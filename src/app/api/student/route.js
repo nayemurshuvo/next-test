@@ -37,9 +37,6 @@ export async function GET() {
   try {
     await connectMongoDB();
     const allStudents = await StudentData.find();
-
-    console.log("Fetched students:", allStudents);
-
     return NextResponse.json({ allStudents });
   } catch (error) {
     console.error("API Error in GET /api/student:", error);

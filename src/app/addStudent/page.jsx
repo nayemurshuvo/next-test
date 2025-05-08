@@ -36,7 +36,7 @@ const addStudent = () => {
     // console.log(newStudent);
 
     // send new query data to the server
-    fetch("http://localhost:3000/api/student", {
+    fetch("/api/student", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -71,14 +71,14 @@ const addStudent = () => {
 
   return (
     <div>
-      <h1>This is Add Student Page</h1>
+      <h1 className="font-extrabold text-4xl p-4">Create Student</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-green-100 p-4 space-y-6 rounded-2xl mt-2"
+        className="bg-slate-200 p-8 space-y-6 rounded-2xl mt-2 shadow-2xl"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Student Name */}
-          <div className="space-y-2">
+          <div className="space-y-2 text-left">
             <label htmlFor="student_name" className="block text-lg font-bold">
               Student Name
             </label>
@@ -113,7 +113,7 @@ const addStudent = () => {
           </div>
 
           {/* Student Email */}
-          <div className="space-y-2">
+          <div className="space-y-2 text-left">
             <label htmlFor="email" className="block text-lg font-bold">
               Email
             </label>
@@ -139,7 +139,7 @@ const addStudent = () => {
           </div>
 
           {/* Age */}
-          <div className="space-y-2">
+          <div className="space-y-2 text-left">
             <label htmlFor="age" className="block text-lg font-bold">
               Age
             </label>
@@ -171,7 +171,7 @@ const addStudent = () => {
           </div>
 
           {/* Contact No */}
-          <div className="space-y-2">
+          <div className="space-y-2 text-left">
             <label htmlFor="contact_no" className="block text-lg font-bold">
               Contact No
             </label>
@@ -197,7 +197,7 @@ const addStudent = () => {
           </div>
 
           {/* Section */}
-          <div className="space-y-2">
+          <div className="space-y-2 text-left">
             <label htmlFor="contact_no" className="block text-lg font-bold">
               Section
             </label>
@@ -212,7 +212,7 @@ const addStudent = () => {
           </div>
 
           {/* Address */}
-          <div className="space-y-2">
+          <div className="space-y-2 text-left">
             <label htmlFor="address" className="block text-lg font-bold">
               Address
             </label>
@@ -227,12 +227,12 @@ const addStudent = () => {
           </div>
 
           {/* Gender */}
-          <div className="space-y-2">
+          <div className="space-y-2 text-left flex items-center space-x-8">
             <label
               htmlFor="gender"
-              className="block text-black text-lg font-bold"
+              className="block text-black text-lg font-bold mt-4"
             >
-              Gender
+              Select Gender
             </label>
             <div className="flex justify-center">
               <div className="flex space-x-8 mt-3">
@@ -272,7 +272,7 @@ const addStudent = () => {
                   <p className="text-sm text-black">Others</p>
                 </div>
               </div>
-              <div>
+              <div className="ml-6">
                 {errors.gender && (
                   <span className="text-sm text-red-500">
                     {errors.gender.message}
@@ -283,14 +283,14 @@ const addStudent = () => {
           </div>
 
           {/* Department */}
-          <div className="space-y-2">
+          <div className="space-y-2 text-left">
             <label htmlFor="dept" className="block text-lg font-bold">
               Department Name
             </label>
             <select
               name="dept"
               id="dept"
-              className="input input-bordered input-success w-full"
+              className="w-full select select-accent"
               {...register("dept", { required: true })}
             >
               <option value="CSE">CSE</option>
@@ -307,7 +307,7 @@ const addStudent = () => {
         </div>
         <button
           type="submit"
-          className="w-fit px-8 py-3 font-bold rounded-md bg-green-400 text-black mt-4"
+          className="w-full btn btn-warning font-bold text-2xl text-black hover:text-white mt-4"
         >
           Save
         </button>
